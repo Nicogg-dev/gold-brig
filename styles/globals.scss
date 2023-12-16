@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./variables.scss";
+@import "./navbar.scss";
+@import "./layoutHome.scss";
+@import "./materia-modifications.scss";
+@import "./product.scss";
+@import "./footer.scss";
+@import "./search.scss";
+@import "./fonts.scss";
+
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.text{
+    &-normal{
+        font-size: 1.5rem;
+        color: $color-terciario-oscuro;
+        &__big{
+            font-size: 1.5rem;    
+            color: $color-terciario-oscuro;
+            font-weight: 600;
+        }
+    }
+
+    &-Amarai-Light{
+        font-family: "Amarai-Light";
+    }
+
+    &-Amarai-Regular{
+        font-family: "Amarai-Regular";
+    }
+
+    &-bold{
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $color-secundario-oscuro;
+    }
+
+    &-title{
+        color: $color-terciario-oscuro;
+        font-weight: 700;
+        letter-spacing: 2px;
+        font-size: 3rem;
+        letter-spacing: 3px;
+
+        &__product{
+            color: $color-terciario-oscuro;
+            letter-spacing: 2px;
+            font-size: 1.5rem;
+            font-weight: 400;
+
+            &-subtitle{
+                color: $color-secundario-oscuro;
+                font-size: 1.3rem;
+                font-weight: 600;
+            }
+        }
+    }
+
+    &-subtitle{
+        color: $color-terciario-oscuro;
+        letter-spacing: 2px;
+        font-size: 2rem;
+        letter-spacing: 5px;
+
+    }
+
+    &-infor{
+        color: #856106;
+        font-size: 2rem;
+        letter-spacing: 2px;
+        font-family: "Amarai-Regular";
+
+    }
+
+    &-description{
+        color: $color-terciario-oscuro;
+        font-size: 1.3rem;
+
+    }
+}
+
+.ornament-text-yellow{
+    &::after{
+        margin-left: 20px;
+        position: absolute;
+        top: 50%;
+        content: " ";
+        width: 65%;
+        height: 2px;
+        background-color: #856106;
+    }
+    
+}

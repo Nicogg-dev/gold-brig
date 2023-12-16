@@ -1,0 +1,41 @@
+.site-nav {
+    z-index: 2;
+    top: 50px;
+    width: 100%;
+    background-color: #0E2D5B;
+    padding: 10px;
+
+    &__list {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      list-style: none;
+      height: 100%;
+    }
+  
+    &__item {
+      font-size: 1.5rem;
+
+      .site-nav__link {
+        font-family: "Amarai-Light";
+        color: $color-primario;
+        text-decoration: none;
+
+        &--secondary{
+          color: $color-terciario-oscuro;
+          text-decoration: none;
+        }
+      }
+    }
+    
+  }
+
+  .site-nav-secondary {
+    @extend .site-nav;
+    position: relative;
+    margin: 10px;
+    top: 0;
+    height: auto;
+  }

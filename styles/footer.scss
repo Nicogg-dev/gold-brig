@@ -1,0 +1,38 @@
+.site-footer{
+    background: $color-cuaternario;
+    padding: 100px 0;
+    margin-top: 100px;
+
+    .site-footer-line-vertical{
+        position: relative;
+        padding-right: 30px;
+        &::after{
+            position: absolute;
+            content: "";
+            width: 5px;
+            height: 100%;
+            background-color: $color-terciario;
+            right: 0;
+
+        }
+    }
+    .site-footer-content-title-complete{
+        font-family: "Amarai-Bold";
+
+        .site-footer-content-title{
+            color: $color-footer-letter;
+        }
+    }
+
+    .site-footer-parrafo{
+        color: white;
+        font-family: 'Amarai-Light';
+        font-size: 1.3rem;
+    }
+
+    .site-footer-content{
+        width: 80%;
+        margin: auto;
+    }
+}
+

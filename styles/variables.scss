@@ -1,0 +1,35 @@
+$color-primario: white;
+$color-secundario: rgb(184,184,178);
+$color-secundario-oscuro: rgb(142,142,137);
+$color-terciario: rgb(68,66,64);
+$color-terciario-oscuro: rgb(42,43,38);
+$color-cuaternario: #0E2D5B;
+$color-quintiario: rgb(221,167,73);
+$color-sextiario: rgb(35,42,46);
+$color-seventenario: rgb(246,246,246);
+$color-yellow: #D29B3B;
+$color-text-yellow:#856106;
+$color-footer-letter: rgb(155,118,73);
+
+.background-color-cuaternario{
+   background: $color-cuaternario;
+}
+
+.text-color-yellow{
+   color: $color-text-yellow;
+}
+
+.text-color-cuaternario{
+   color: $color-cuaternario;
+}
+
+.background-color-secundario{
+    background: $color-secundario;
+ }
+
+ 
+
+.background-color-yellow{
+   background: $color-yellow;
+ }
+ 

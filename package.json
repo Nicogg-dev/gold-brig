@@ -1,0 +1,39 @@
+{
+  "name": "gold_brick",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/material": "^5.12.1",
+    "@reduxjs/toolkit": "^1.9.5",
+    "@sanity/client": "^5.4.2",
+    "@types/node": "18.16.0",
+    "@types/react": "18.0.38",
+    "@types/react-dom": "18.0.11",
+    "bootstrap": "^5.2.3",
+    "eslint": "8.39.0",
+    "eslint-config-next": "13.3.1",
+    "next": "13.3.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.43.9",
+    "react-icons": "^4.8.0",
+    "react-redux": "^8.0.5",
+    "react-responsive": "^9.0.2",
+    "redux": "^4.2.1",
+    "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "sass": "^1.62.0",
+    "tailwindcss": "^3.3.6"
+  }
+}
