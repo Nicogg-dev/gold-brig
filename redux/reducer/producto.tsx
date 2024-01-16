@@ -7,10 +7,12 @@ const productoSlice = createSlice({
     value: 0,
   },
   reducers: {
-    increment: product,
+    otracosa: (state, action) => {
+      state.value = action.payload;
+  }
   },
 });
 
-export const { increment } = productoSlice.actions;
+export const { otracosa } = productoSlice.actions;
 
 export default productoSlice.reducer;

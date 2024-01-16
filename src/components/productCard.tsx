@@ -1,57 +1,69 @@
 import React from 'react';
 import { NextPage } from 'next';
 import { Box } from '@mui/material';
-import Image from 'next/image';
-import { StyledDividerHorizontal, StyledDividerVertical } from '../stylesComponent/divider';
+import { urlFor } from '@/utils/sanityClient';
+import Link from 'next/link';
 
-const ProductCard: NextPage = () => {
+const ProductCard: NextPage = ({ apartment, tipo }) => {
+
+
+  const { ubicacion, precio, area, cuartos, banos, Imagenes, _id } = apartment;
+
+  const formatoPesos = new Intl.NumberFormat('es-CO', {
+    style: 'currency',
+    currency: 'COP'
+  });
+  const valor = formatoPesos.format(precio);
+
   return (
-    <Box className="site-search_product">
-    <Image
-            src="/images/casa-arriendo.jpg"
-            alt="Banner"
-            fill
-            className='position-relative site-search_product-image'
+    <div className='p-4 w-full col-span-6'>
+      <Link
+        href={`/products/[parametro]?tipo=${tipo}`}
+        as={`/products/${_id}?tipo=${tipo}`}>
+        <img
+          src={urlFor(Imagenes[0].asset._ref)}
+          className='position-relative site-search_product-image'
+          style={{ height: '200px', width: '100%', objectFit: 'cover' }}
         />
-      <Box className="d-flex flex-column px-3" sx={{border:"2px solid rgb(184,184,178)"}}>
-        <Box className="d-flex flex-row justify-content-between">
-          <Box className="d-flex flex-column">
-            <p className='text-bold text-center mb-0 mt-2'>
+      </Link>
+      <Box className="border-x-2 border-b-2 border-gray-400">
+        <Box className="flex justify-center gap-6 pt-2">
+          <Box className="flex flex-col">
+            <h4 className='font-semibold text-center text-sm text-gray-500'>
               UBICACION
-            </p> 
-            <p className='text-normal__big'>
-              West Palm Beach, 27th Road
+            </h4>
+            <p className='text-center text-lg font-normal'>
+              {ubicacion}
             </p>
           </Box>
-          <Box className="d-flex flex-column me-5">
-            <p className='text-bold text-center mb-0 mt-2'>
-             STARTING PRICE
-            </p> 
-            <p className='text-normal__big text-center'>
-              $2.500.000.000
+          <Box className="flex flex-col">
+            <h4 className='font-semibold text-center text-sm text-gray-500'>
+              STARTING PRICE
+            </h4>
+            <p className='text-center text-lg font-normal'>
+              {valor}
             </p>
-          </Box>
-        </Box> 
-        <StyledDividerHorizontal className='mb-2' />
-        <Box className="d-flex flex-row justify-content-around">
-          <Box className="d-flex flex-row align-items-center">
-          <p className='text-title__product-subtitle my-0'>AREA </p>
-          <span className='ms-3 fw-normal fs-5  text-normal__big'>2000 m2</span>
-          </Box>
-          <StyledDividerVertical orientation="vertical"  flexItem />
-          <Box className="d-flex flex-row align-items-center">
-          <p className='text-title__product-subtitle my-0'>CUARTOS </p>
-          <span className='ms-3 fw-normal fs-5  text-normal__big'>4</span>
-          </Box>
-          <StyledDividerVertical orientation="vertical"  flexItem />
-          <Box className="d-flex flex-row align-items-center">
-          <p className='text-title__product-subtitle my-0'>BAÑOS </p>
-          <span className='ms-3 fw-normal fs-5  text-normal__big'>5</span>
           </Box>
         </Box>
-        
+        <Box className="flex border-t-2 justify-between">
+          <Box className="flex gap-2 pt-2 mt-2 mb-1 px-2 border-r-2 border-gray-600">
+            <h5 className='font-semibold text-sm text-gray-500'>AREA (m2) </h5>
+            <p className='text-sm'>{area} m2</p>
+          </Box>
+
+          <Box className="flex gap-2 pt-2 mt-2 mb-1 px-2 border-r-2 border-gray-600">
+            <h5 className='font-semibold text-sm text-gray-500'>CUARTOS </h5>
+            <p className='text-sm'>{cuartos}</p>
+          </Box>
+
+          <Box className="flex gap-2 pt-2 mt-2 mb-1 px-2">
+            <h5 className='font-semibold text-sm text-gray-500'>BAÑOS </h5>
+            <p className='text-sm'>{banos}</p>
+          </Box>
+        </Box>
+
       </Box>
-  </Box>
+    </div>
   );
 };
 

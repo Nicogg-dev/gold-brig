@@ -1,77 +1,90 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { FaArrowUp } from 'react-icons/fa';
 import Image from 'next/image';
 import Link from 'next/link';
-import { CiSearch } from "react-icons/ci";
-import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 
-
 const Nav: NextPage = () => {
-    const router = useRouter();
-    const currentPath = router.pathname;
+  const venta = 'ventaap';
+  const arriendo = 'arriendoap';
+  const vacacional = 'vacacionalesap';
 
-    const [showMenu, setShowMenu] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
-    const toggleMenu = () => {
-        setShowMenu(!showMenu);
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
+
+  const menuRef = useRef(null);
+
+  const closeMenuIfClickedOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setShowMenu(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', closeMenuIfClickedOutside);
+
+    return () => {
+      document.removeEventListener('click', closeMenuIfClickedOutside);
     };
+  }, []);
 
-    return (
-        <nav className="site-nav w-full">
-            <ul className="site-nav__list">
-                <li>
+  return (
+    <nav className="w-full bg-blue-950">
+      <ul className="site-nav__list">
+        <li className='flex pb-2 items-center justify-center text-center'>
+          <Image
+            src="/images/MaskGroup.png"
+            alt="Banner"
+            width={110}
+            height={90}
+            className='margin-auto'
+          />
+        </li>
 
-                    <Image
-                        src={currentPath == "/" ? "/images/icono.png" : "/images/icono-pagina-removebg-preview.png"}
-                        alt="Banner"
-                        width={140}
-                        height={120}
-                        className={currentPath == "/" ? " " : "mt-2"}
-                    />
-                </li>
+        <li className="site-nav__item">
+          <Link href="/" className="site-nav__link text-xl">HOME</Link>
+        </li>
 
-                <li className="site-nav__item">
-                    <Link href="/" className="site-nav__link">HOME</Link>
-                </li>
+        <li className="site-nav__item relative" ref={menuRef}>
+          <button
+            onClick={toggleMenu}
+            className={`site-nav__link transition duration-300 flex gap-2 items-center text-xl h-full ${showMenu ? 'border-b-2' : 'border-b-0'}`}
+          >
+            VENTAS Y ARRIENDOS
+            <FaArrowUp className={`text-sm transition duration-300 ${showMenu ? 'rotate-180' : ''}`} />
+          </button>
+          <div
+            className={`overflow-hidden transition-all duration-400 max-h-0 ${showMenu ? 'max-h-screen' : ''}`}
+          >
+            {showMenu && (
+              <div className="absolute z-10 mt-2 bg-blue-950 bg-opacity-80 shadow-md transition duration-300">
+                <Link href={`/search?tipo=${venta}`} className="block px-4 py-2 text-white hover:bg-blue-950 no-underline text-xl">
+                  Venta
+                </Link>
+                <Link href={`/search?tipo=${arriendo}`} className="block px-4 py-2 text-white hover:bg-blue-950 no-underline text-xl">
+                  Arriendo
+                </Link>
+                <Link href='/estimaciones' className="block px-4 py-2 text-white hover:bg-blue-950 no-underline text-xl">
+                  Estimacion de valor
+                </Link>
+              </div>
+            )}
+          </div>
+        </li>
 
-                <li className="site-nav__item relative">
-                    <button onClick={toggleMenu} className="site-nav__link">VENTAS Y ARRIENDOS</button>
-                    {showMenu && (
-                        <div className="absolute z-10 mt-2 bg-gray-200 bg-opacity-50 border border-gray-300 rounded shadow-md">
-                            <Link href="#" className="block px-4 py-2 text-black hover:bg-gray-200 no-underline">
-                                Venta
-                            </Link>
-                            <Link href="#" className="block px-4 py-2 text-black hover:bg-gray-200 no-underline">
-                                Arriendos
-                            </Link>
-                            <Link href="#" className="block px-4 py-2 text-white hover:bg-gray-200 no-underline">
-                                Estimaciones de valor
-                            </Link>
-                        </div>
-                    )}
-                </li>
+        <li className="site-nav__item">
+          <Link href={`/search?tipo=${vacacional}`} className="site-nav__link text-xl">VACACIONALES</Link>
+        </li>
 
-                <li className="site-nav__item">
-                    <a href="#" className="site-nav__link">ESTIMACIONES DE VALOR</a>
-                </li>
-
-                <li className="site-nav__item">
-                    <a href="#" className="site-nav__link">VACACIONALES</a>
-                </li>
-
-                <li className="site-nav__item">
-                    <a href="#" className="site-nav__link">PROYECTOS</a>
-                </li>
-
-                <li className="site-nav__item">
-                    <a href="#" className="site-nav__link">
-                        <CiSearch />
-                    </a>
-                </li>
-
-            </ul>
-        </nav>
-    );
+        <li className="site-nav__item">
+          <Link href="/proyectos" className="site-nav__link text-xl">PROYECTOS</Link>
+        </li>
+      </ul>
+    </nav>
+  );
 };
 
 export default Nav;
