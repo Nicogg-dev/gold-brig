@@ -3,6 +3,7 @@ import { NextPage } from 'next';
 import { Box } from '@mui/material';
 import { urlFor } from '@/utils/sanityClient';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const ProductCard: NextPage = ({ apartment, tipo }) => {
 
@@ -20,9 +21,13 @@ const ProductCard: NextPage = ({ apartment, tipo }) => {
       <Link
         href={`/products/[parametro]?tipo=${tipo}`}
         as={`/products/${_id}?tipo=${tipo}`}>
-        <img
-          src={urlFor(Imagenes[0].asset._ref)}
-          className='position-relative site-search_product-image'
+        <Image
+          src={urlFor(Imagenes[0].asset._ref).url()}
+          alt='product image'
+          className='position-relative relative'
+          quality={80}
+          width={500}
+          height={500}
           style={{ height: '200px', width: '100%', objectFit: 'cover' }}
         />
       </Link>
