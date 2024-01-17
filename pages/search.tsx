@@ -24,7 +24,7 @@ export default function Search() {
 
   useEffect(() => {
     if (router.query.ubicacion) {
-      setSelectedCity(router.query.ubicacion);
+      setSelectedCity(Array.isArray(router.query.ubicacion) ? router.query.ubicacion[0] : router.query.ubicacion);
     } else {
       setSelectedCity('');
     }
@@ -32,17 +32,17 @@ export default function Search() {
 
   useEffect(() => {
     if (router.query.inmueble) {
-      setInmueble(router.query.inmueble);
+      setInmueble(Array.isArray(router.query.inmueble) ? router.query.inmueble[0] : router.query.inmueble);
     } else {
       setInmueble('');
     }
   }, [router.query.inmueble]);
 
-  const handleCityChange = (event) => {
+  const handleCityChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedCity(event.target.value);
   };
 
-  const handleInmuebleChange = (event) => {
+  const handleInmuebleChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
     setInmueble(event.target.value);
   };
 
@@ -59,7 +59,7 @@ export default function Search() {
     const getUbicacion = async () => {
       const res = await client.fetch(`*[_type == "${tipo}"]{ubicacion}`);
       const ubicacionSet = new Set();
-      res.forEach(item => {
+      res.forEach((item: { ubicacion: unknown; }) => {
         ubicacionSet.add(item.ubicacion);
       });
       const departamentos = Array.from(ubicacionSet);
@@ -251,7 +251,7 @@ export default function Search() {
           </div>
           <Slider {...settings} className="w-96 lg:w-11/12 m-auto">
             {apartaments.map((apartment) => (
-              <ProductCard tipo={tipo} apartment={apartment} key={apartment._id} />
+              <ProductCard tipo={tipo || ""} apartment={apartment} key={apartment._id} />
             ))}
             {/* Tarjetas que ocuparán el espacio restante */}
             {/* <div>
