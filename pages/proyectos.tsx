@@ -4,15 +4,15 @@ import { client } from "@/utils/sanityClient";
 import { InputLabel, MenuItem, Select } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { SelectChangeEvent } from '@mui/material/Select';
 
 interface Proyecto {
     ubicacion: string;
     // Otras propiedades si las tienes...
 }
+const tipo: string = 'proyectos';
 
 export default function Proyectos() {
-
-    const tipo = 'proyectos';
 
     const [apartaments, setApartaments] = useState([]);
     const [selectedCity, setSelectedCity] = useState('');
@@ -20,7 +20,7 @@ export default function Proyectos() {
     const [area, setArea] = useState(3000);
     const [ubicacion, setUbicacion] = useState<string[]>([]);
 
-    const handleCityChange = (event: React.ChangeEvent<any>) => {
+    const handleCityChange = (event: SelectChangeEvent<string>) => {
         setSelectedCity(event.target.value);
     };
 
@@ -43,7 +43,6 @@ export default function Proyectos() {
 
         getUbicacion();
     }, []);
-
 
     useEffect(() => {
         const getApartaments = async () => {
@@ -74,7 +73,7 @@ export default function Proyectos() {
                             fullWidth
                             label="ciudad"
                             value={selectedCity}
-                            onChange={handleCityChange}
+                            onChange={(event: SelectChangeEvent<string>, child: React.ReactNode) => handleCityChange(event)}
                         >
                             <MenuItem value="" disabled>
                                 Ordenar por ciudades
