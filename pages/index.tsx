@@ -50,7 +50,7 @@ export default function Home() {
         ubicacionSet.add(item.ubicacion);
       });
       const departamentos = Array.from(ubicacionSet);
-      setUbicacion(departamentos);
+      setUbicacion(departamentos as never[]);
     };
     getUbicacion();
   }, []);
