@@ -21,7 +21,7 @@ export default function Home() {
   const [ubicacionValue, setUbicacionValue] = useState('');
   const [inmuebleValue, setInmuebleValue] = useState('');
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     // Construct the URL based on the selected values
     if(ubicacionValue == "" || inmuebleValue == ""){
