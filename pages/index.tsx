@@ -235,26 +235,26 @@ export default function Home() {
         <div className='flex flex-col items-center justify-center col-span-2 lg:col-span-1 lg:items-start'>
           <span className='flex items-center'>
             <IoIosMail className='mr-2 text-4xl text-blue-950' />
-            <a
+            <Link
               href="mailto:GOLDBRICKSINVERSIONES@OUTLOOK.COM?subject=Asunto del correo&body=Cuerpo del mensaje"
               className='text-color-yellow'
               target="_blank" rel="noopener noreferrer">
               GOLDBRICKSINVERSIONES@OUTLOOK.COM
-            </a>
+            </Link>
           </span>
           <span className='flex mt-4'>
             <FaPhoneAlt className='mr-2 text-3xl text-blue-950' />
             <p className='text-color-yellow'>+57 (317)383 2489</p>
           </span>
           <span className='flex items-center gap-4 my-4'>
-            <a
+            <Link
               href="https://www.instagram.com/inmo.goldbricks?igsh=OGQ5ZDc2ODk2ZA=="
               target="_blank">
               <FaInstagram className='text-3xl text-blue-950' />
-            </a>
-            <a href="#">
+            </Link>
+            <Link href="#">
               <FaFacebook className='text-3xl text-blue-950' />
-            </a>
+            </Link>
           </span>
         </div>
       </footer>
