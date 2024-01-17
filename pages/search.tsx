@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from 'next/router';
 
 import Slider from "react-slick";
+import ArrowProps from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -9,7 +10,6 @@ import { Box, InputLabel, MenuItem, Select } from '@mui/material';
 import ProductCard from '@/src/components/productCard';
 import LayoutHomePage from '@/src/layouts/home';
 import { client } from "@/utils/sanityClient";
-import { ArrowProps } from 'slick-carousel';
 
 type UbicacionType = string;
 
@@ -91,15 +91,20 @@ export default function Search() {
   }, [tipo, range, area, selectedCity, inmueble]);
 
 
+  type ArrowProps = {
+    currentSlide: number;
+    slideCount: number;
+  };
+
   const CustomPrevArrow: React.FC<ArrowProps & React.HTMLAttributes<HTMLDivElement>> = ({ currentSlide, slideCount, ...props }) => (
-    <div {...props} currentslide={currentSlide} slidecount={slideCount} className="absolute top-1/2 -left-5 transform -translate-y-1/2 text-white text-lg cursor-pointer z-20 rounded-full p-1" style={{ background: '#caad9e' }}>
+    <div {...props} className="absolute top-1/2 -left-5 transform -translate-y-1/2 text-white text-lg cursor-pointer z-20 rounded-full p-1" style={{ background: '#caad9e' }}>
       {/* Personaliza la flecha hacia la izquierda aquí */}
       &#8592;
     </div>
   );
 
   const CustomNextArrow: React.FC<ArrowProps & React.HTMLAttributes<HTMLDivElement>> = ({ currentSlide, slideCount, ...props }) => (
-    <div {...props} currentslide={currentSlide} slidecount={slideCount} className="absolute top-1/2 -right-5 transform -translate-y-1/2 text-white text-lg cursor-pointer z-20 rounded-full p-1" style={{ background: '#caad9e' }}>
+    <div {...props} className="absolute top-1/2 -right-5 transform -translate-y-1/2 text-white text-lg cursor-pointer z-20 rounded-full p-1" style={{ background: '#caad9e' }}>
       {/* Personaliza la flecha hacia la derecha aquí */}
       &#8594;
     </div>
