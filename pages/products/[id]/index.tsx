@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import Image from 'next/image';
 import { Box, Grid } from '@mui/material';
 
@@ -27,10 +26,6 @@ export default function Pages({ id }: { id: string }) {
             const [res] = await client.fetch(`*[_type == $tipo && _id == $apartamentoId]`, { tipo: tipo, apartamentoId: id });
             setApartament(res);
             const imageurl = res.Imagenes[0].asset._ref;
-            const [url, setUrl] = useState<string>(); // Update the type of 'url' to string
-
-            // ...
-
             setUrl(urlFor(imageurl).url());
         }
         getApartaments();
@@ -56,7 +51,7 @@ export default function Pages({ id }: { id: string }) {
                             <p className="text-xl md:text-2xl mb-0 mt-4" style={{ color: '#8A8172' }}>INMUEBLES</p>
                             <h2 className="text-3xl md:text-4xl mb-5">DESTACADOS</h2>
                         </Box>
-
+                        
                         {url && <img src={url}
                             alt="Tu imagen"
                             className='position-relative' />}
