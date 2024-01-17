@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, ReactNode } from "react";
 import { useRouter } from 'next/router';
 
 import Slider from "react-slick";
@@ -6,7 +6,7 @@ import ArrowProps from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import { Box, InputLabel, MenuItem, Select } from '@mui/material';
+import { Box, InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material';
 import ProductCard from '@/src/components/productCard';
 import LayoutHomePage from '@/src/layouts/home';
 import { client } from "@/utils/sanityClient";
@@ -40,7 +40,7 @@ export default function Search() {
     }
   }, [router.query.inmueble]);
 
-  const handleCityChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleCityChange = (event: SelectChangeEvent<string>, child: ReactNode) => {
     setSelectedCity(event.target.value);
   };
 
