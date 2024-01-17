@@ -10,6 +10,7 @@ import ProductCard from '@/src/components/productCard';
 import LayoutHomePage from '@/src/layouts/home';
 import { client } from "@/utils/sanityClient";
 
+type UbicacionType = string;
 
 export default function Search() {
 
@@ -58,12 +59,12 @@ export default function Search() {
   useEffect(() => {
     const getUbicacion = async () => {
       const res = await client.fetch(`*[_type == "${tipo}"]{ubicacion}`);
-      const ubicacionSet = new Set();
-      res.forEach((item: { ubicacion: unknown; }) => {
+      const ubicacionSet = new Set<unknown>();
+      res.forEach((item: { ubicacion: unknown }) => {
         ubicacionSet.add(item.ubicacion);
       });
-      const departamentos = Array.from(ubicacionSet);
-      setUbicacion(departamentos as string[]);
+      const departamentos = Array.from(ubicacionSet) as UbicacionType[];
+      setUbicacion(departamentos as never[]);
     };
     getUbicacion();
   }, [tipo]);
