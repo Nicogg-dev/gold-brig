@@ -63,7 +63,7 @@ export default function Search() {
         ubicacionSet.add(item.ubicacion);
       });
       const departamentos = Array.from(ubicacionSet);
-      setUbicacion(departamentos);
+      setUbicacion(departamentos as string[]);
     };
     getUbicacion();
   }, [tipo]);
@@ -226,7 +226,7 @@ export default function Search() {
               APARTAMENTOS EN
             </h3>
             <h3 className='text-2xl text-center text-stone-500'>
-              {tipo?.slice(0, -2).toUpperCase()}
+              {Array.isArray(tipo) ? tipo[0].toUpperCase() : tipo?.slice(0, -2).toUpperCase()}
             </h3>
             <h2 className='text-center font-bold text-3xl md:text-4xl'>
               DESTACADOS
@@ -251,7 +251,7 @@ export default function Search() {
           </div>
           <Slider {...settings} className="w-96 lg:w-11/12 m-auto">
             {apartaments.map((apartment) => (
-              <ProductCard tipo={tipo || ""} apartment={apartment} key={apartment._id} />
+              <ProductCard tipo={Array.isArray(tipo) ? tipo.join("") : tipo || ""} apartment={apartment} key={apartment._id} />
             ))}
             {/* Tarjetas que ocuparán el espacio restante */}
             {/* <div>
