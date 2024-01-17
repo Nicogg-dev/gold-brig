@@ -126,8 +126,8 @@ export default function Search() {
     slidesToShow: 2,
     slidesToScroll: 1,
     initialSlide: 0,
-    prevArrow: <CustomPrevArrow />,
-    nextArrow: <CustomNextArrow />,
+    prevArrow: <CustomPrevArrow currentSlide={0} slideCount={0} />,
+    nextArrow: <CustomNextArrow currentSlide={0} slideCount={0} />,
     responsive: [
       {
         breakpoint: 1024,
@@ -136,8 +136,8 @@ export default function Search() {
           slidesToScroll: 1,
           infinite: true,
           dots: true,
-          prevArrow: <CustomPrevArrow />,
-          nextArrow: <CustomNextArrow />,
+          prevArrow: <CustomPrevArrow currentSlide={0} slideCount={0} />,
+          nextArrow: <CustomNextArrow currentSlide={0} slideCount={0} />,
         }
       },
       {
@@ -145,8 +145,8 @@ export default function Search() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          prevArrow: <CustomPrevArrow />,
-          nextArrow: <CustomNextArrow />,
+          prevArrow: <CustomPrevArrow currentSlide={0} slideCount={0} />,
+          nextArrow: <CustomNextArrow currentSlide={0} slideCount={0} />,
         }
       }
     ]
