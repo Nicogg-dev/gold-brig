@@ -6,12 +6,20 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { client, urlFor } from '@/utils/sanityClient';
 
+interface Apartamento {
+    // Ajusta la interfaz según la estructura real de tus datos de apartamento
+    _id: string;
+    precio: number;
+    administracion: number;
+    // Otras propiedades...
+}
+
 export default function Pages({ id }: { id: string }) {
 
     const router = useRouter();
 
-    const [apartament, setApartament] = useState({});
-    const [url, setUrl] = useState('');
+    const [apartament, setApartament] = useState<Apartamento | {}>({});
+    const [url, setUrl] = useState<string | undefined>(undefined);
 
 
     const [tipo, setTipo] = useState(router.query.tipo);
@@ -51,7 +59,7 @@ export default function Pages({ id }: { id: string }) {
                             <p className="text-xl md:text-2xl mb-0 mt-4" style={{ color: '#8A8172' }}>INMUEBLES</p>
                             <h2 className="text-3xl md:text-4xl mb-5">DESTACADOS</h2>
                         </Box>
-                        
+
                         {url && <img src={url}
                             alt="Tu imagen"
                             className='position-relative' />}
