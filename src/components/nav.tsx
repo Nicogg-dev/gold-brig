@@ -32,14 +32,14 @@ const Nav: NextPage = () => {
   }, []);
 
   return (
-    <nav className="w-full bg-blue-950">
+    <nav className="w-full bg-blue-950 h-28">
       <ul className="site-nav__list">
-        <li className='flex pb-2 items-center justify-center text-center'>
+        <li className='flex pb-3 items-center justify-center text-center'>
           <Image
-            src="/images/MaskGroup.png"
+            src="/images/Maskgroup.png"
             alt="Banner"
-            width={110}
-            height={90}
+            width={120}
+            height={100}
             className='margin-auto'
           />
         </li>

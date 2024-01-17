@@ -58,12 +58,12 @@ export default function Home() {
     <LayoutHomePage title='Gold Brick'>
       <Box className="site-home">
         <Image
-          src="/images/bannerfinal.png"
+          src="/images/final.png"
           alt="Banner"
           fill
           className='site-home__image'
         />
-        <Box className="site-home__content ">
+        <Box className="site-home__content pb-20">
           <h1 className='text-3xl text-white md:text-5xl text-bold'>COMPRA, RENTA Y VENDE</h1>
           <p className='text-lg text-white md:text-xl md:text-gray-600 '>EN MANOS DE EXPERTOS</p>
         </Box>

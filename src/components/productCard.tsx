@@ -45,18 +45,18 @@ const ProductCard: NextPage = ({ apartment, tipo }) => {
             </p>
           </Box>
         </Box>
-        <Box className="flex border-t-2 justify-between">
-          <Box className="flex gap-2 pt-2 mt-2 mb-1 px-2 border-r-2 border-gray-600">
+        <Box className="grid grid-cols-12 border-t-2 ">
+          <Box className="col-span-4 flex gap-2 pt-2 mt-2 mb-1 px-2 border-r-2 border-gray-600 justify-center">
             <h5 className='font-semibold text-sm text-gray-500'>AREA (m2) </h5>
             <p className='text-sm'>{area} m2</p>
           </Box>
 
-          <Box className="flex gap-2 pt-2 mt-2 mb-1 px-2 border-r-2 border-gray-600">
+          <Box className="col-span-4 flex gap-2 pt-2 mt-2 mb-1 px-2 border-r-2 border-gray-600 justify-center">
             <h5 className='font-semibold text-sm text-gray-500'>CUARTOS </h5>
             <p className='text-sm'>{cuartos}</p>
           </Box>
 
-          <Box className="flex gap-2 pt-2 mt-2 mb-1 px-2">
+          <Box className="col-span-4 flex gap-2 pt-2 mt-2 mb-1 px-2 justify-center">
             <h5 className='font-semibold text-sm text-gray-500'>BAÑOS </h5>
             <p className='text-sm'>{banos}</p>
           </Box>

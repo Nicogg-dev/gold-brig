@@ -20,12 +20,12 @@ export default function Search() {
   const [range, setRange] = useState(3000);
   const [area, setArea] = useState(3000);
   const [selectedCity, setSelectedCity] = useState('');
-  const [inmueble, setInmueble] = useState();
+  const [inmueble, setInmueble] = useState('');
 
   useEffect(() => {
     if (router.query.ubicacion) {
       setSelectedCity(router.query.ubicacion);
-    }else{
+    } else {
       setSelectedCity('');
     }
   }, [router.query.ubicacion]);
@@ -33,13 +33,17 @@ export default function Search() {
   useEffect(() => {
     if (router.query.inmueble) {
       setInmueble(router.query.inmueble);
-    }else{
+    } else {
       setInmueble('');
     }
   }, [router.query.inmueble]);
 
   const handleCityChange = (event) => {
     setSelectedCity(event.target.value);
+  };
+
+  const handleInmuebleChange = (event) => {
+    setInmueble(event.target.value);
   };
 
   const [tipo, setTipo] = useState(router.query.tipo);
@@ -77,7 +81,7 @@ export default function Search() {
       query += ']';
 
       const res = await client.fetch(query);
-      
+
       setApartaments(res);
     }
     getApartaments();
@@ -193,6 +197,27 @@ export default function Search() {
                     <MenuItem key={index} value={item}>{item}</MenuItem>
                   ))
                 }
+              </Select>
+            </div>
+            <div className="pt-2 text-center">
+              <InputLabel id="tipoInmueble" className='font-light text-black mb-1 text-base'>Tipo de inmueble</InputLabel>
+              <Select
+                className='h-8'
+                labelId="demo-simple-select-autowidth-label"
+                id="inmueble"
+                fullWidth
+                label="Age"
+                value={inmueble}
+                onChange={handleInmuebleChange}
+              >
+                <MenuItem value="" disabled>
+                  Min
+                </MenuItem>
+                <MenuItem value={"casa"}>Casas</MenuItem>
+                <MenuItem value={"apartamento"}>Apartamentos</MenuItem>
+                <MenuItem value={"local"}>Locales Comerciales</MenuItem>
+                <MenuItem value={"lote"}>Lotes</MenuItem>
+                <MenuItem value={"bodega"}>Bodegas</MenuItem>
               </Select>
             </div>
           </div>
