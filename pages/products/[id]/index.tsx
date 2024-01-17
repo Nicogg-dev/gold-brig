@@ -6,27 +6,39 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { client, urlFor } from '@/utils/sanityClient';
 
-const apartamento = {
-    "Nombre": "Apartamento 1",
-    "ubicacion": "Bogotá",
-    "precio": 100000000,
-    "area": 100,
-    "cuartos": 3,
-    "banos": 2,
-    "administracion": 100000,
-    "estrato": 3,
-    "ano": 2010,
-    "piso": 2,
-    "parqueadero": 1,
-    "terraza": "Si",
-    "Caracteristicas": [
-        "Piscina",
-        "Zona de juegos",
-        "Gimnasio",
-        "Zona BBQ",
-        "Salon social"
-    ],
-}
+interface Apartamento {
+    Nombre: string;
+    ubicacion: string;
+    precio: number;
+    area: number;
+    cuartos: number;
+    banos: number;
+    administracion: number;
+    estrato: number;
+    ano: number;
+    piso: number;
+    parqueadero: number;
+    terraza: string;
+    Caracteristicas: string[];
+    informacion?: string; // Agrega la propiedad informacion si realmente la necesitas
+  }
+
+const apartamento: Apartamento = {
+    Nombre: "Apartamento",
+    ubicacion: "Ubicacion",
+    precio: 100000, // Ejemplo de valor numérico para precio
+    area: 120, // Ejemplo de valor numérico para area
+    cuartos: 3,
+    banos: 2,
+    administracion: 200000, // Ejemplo de valor numérico para administracion
+    estrato: 4,
+    ano: 2020,
+    piso: 5,
+    parqueadero: 1,
+    terraza: "Si",
+    Caracteristicas: ["Caracteristicas"],
+    informacion: "Informacion adicional", // Ejemplo de propiedad informacion
+  };
 
 export default function Pages({ id }: { id: string }) {
 
