@@ -10,6 +10,7 @@ import { IoIosMail } from "react-icons/io";
 import { FaPhoneAlt, FaInstagram, FaFacebook } from "react-icons/fa";
 import { client } from '@/utils/sanityClient';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -75,14 +76,14 @@ export default function Home() {
             onSubmit={handleFormSubmit}>
             <Box className="flex justify-center col-span-12 gap-2 md:col-span-2 sm:flex-row md:flex-col sm:mb-4 md:mb-0">
               <Button variant="contained" className='h-20 font-bold bg-blue-700'>
-                <a href="/search?tipo=ventaap" className='w-full text-white no-underline'>
+                <Link href="/search?tipo=ventaap" className='w-full text-white no-underline'>
                   Comprar
-                </a>
+                </Link>
               </Button>
               <Button variant="contained" className='h-20 font-bold text-blue-800 bg-white'>
-                <a href="/search?tipo=arriendoap" className='w-full no-underline text-blue-950'>
+                <Link href="/search?tipo=arriendoap" className='w-full no-underline text-blue-950'>
                   Rentar
-                </a>
+                </Link>
               </Button>
             </Box>
 
