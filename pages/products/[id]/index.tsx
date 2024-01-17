@@ -11,7 +11,7 @@ export default function Pages({ id }: { id: string }) {
     const router = useRouter();
 
     const [apartament, setApartament] = useState({});
-    const [url, setUrl] = useState();
+    const [url, setUrl] = useState('');
 
 
     const [tipo, setTipo] = useState(router.query.tipo);
