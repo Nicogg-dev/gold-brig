@@ -21,6 +21,7 @@ interface Apartamento {
     terraza: string;
     Caracteristicas: string[];
     informacion?: string; // Agrega la propiedad informacion si realmente la necesitas
+    url?: string;
   }
 
 const apartamento: Apartamento = {
@@ -38,6 +39,7 @@ const apartamento: Apartamento = {
     terraza: "Si",
     Caracteristicas: ["Caracteristicas"],
     informacion: "Informacion adicional", // Ejemplo de propiedad informacion
+    url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13743.33083466056!2d-75.91841313056536!3d4.753817257859325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e38701f36b03203%3A0x31209e5324dec0f0!2sParque%20Lineal!5e0!3m2!1ses-419!2sco!4v1705532277645!5m2!1ses-419!2sco",
   };
 
 export default function Pages({ id }: { id: string }) {
