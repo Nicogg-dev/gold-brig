@@ -5,8 +5,13 @@ import { urlFor } from '@/utils/sanityClient';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const ProductCard: NextPage = ({ apartment, tipo }) => {
+interface ProductCardProps {
+  tipo: string;
+  apartment: any;
+  key: string;
+}
 
+const ProductCard: React.FC<ProductCardProps> = ({ tipo, apartment, key }) => {
 
   const { ubicacion, precio, area, cuartos, banos, Imagenes, _id } = apartment;
 
