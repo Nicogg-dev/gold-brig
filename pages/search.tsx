@@ -9,6 +9,7 @@ import { Box, InputLabel, MenuItem, Select } from '@mui/material';
 import ProductCard from '@/src/components/productCard';
 import LayoutHomePage from '@/src/layouts/home';
 import { client } from "@/utils/sanityClient";
+import { ArrowProps } from 'slick-carousel';
 
 type UbicacionType = string;
 
