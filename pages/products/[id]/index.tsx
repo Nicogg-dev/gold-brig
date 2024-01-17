@@ -7,20 +7,24 @@ import { useRouter } from 'next/router';
 import { client, urlFor } from '@/utils/sanityClient';
 
 const apartamento = {
-    "Nombre": "Apartamento",
-    "ubicacion": "Ubicacion",
-    "precio": '$',
-    "area": "Area",
-    "cuartos": "Cuartos",
-    "banos": "Banos",
-    "administracion": "Administracion",
-    "estrato": "Estrato",
-    "ano": "Año",
-    "piso": "Piso",
-    "parqueadero": "Parqueadero",
+    "Nombre": "Apartamento 1",
+    "ubicacion": "Bogotá",
+    "precio": 100000000,
+    "area": 100,
+    "cuartos": 3,
+    "banos": 2,
+    "administracion": 100000,
+    "estrato": 3,
+    "ano": 2010,
+    "piso": 2,
+    "parqueadero": 1,
     "terraza": "Si",
     "Caracteristicas": [
-        "Caracteristicas",
+        "Piscina",
+        "Zona de juegos",
+        "Gimnasio",
+        "Zona BBQ",
+        "Salon social"
     ],
 }
 
