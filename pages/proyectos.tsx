@@ -15,7 +15,7 @@ export default function Proyectos() {
     const [area, setArea] = useState(3000);
     const [ubicacion, setUbicacion] = useState([]);
 
-    const handleCityChange = (event) => {
+    const handleCityChange = (event: React.ChangeEvent<any>) => {
         setSelectedCity(event.target.value);
     };
 
@@ -23,7 +23,7 @@ export default function Proyectos() {
         const getUbicacion = async () => {
             const res = await client.fetch(`*[_type == "proyectos"]{ubicacion}`);
             const ubicacionSet = new Set();
-            res.forEach(item => {
+            res.forEach((item: any) => {
                 ubicacionSet.add(item.ubicacion);
             });
             const departamentos = Array.from(ubicacionSet);
