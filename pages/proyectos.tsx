@@ -5,6 +5,11 @@ import { InputLabel, MenuItem, Select } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
+interface Proyecto {
+    ubicacion: string;
+    // Otras propiedades si las tienes...
+}
+
 export default function Proyectos() {
 
     const tipo = 'proyectos';
@@ -13,7 +18,7 @@ export default function Proyectos() {
     const [selectedCity, setSelectedCity] = useState('');
     const [range, setRange] = useState(3000);
     const [area, setArea] = useState(3000);
-    const [ubicacion, setUbicacion] = useState([]);
+    const [ubicacion, setUbicacion] = useState<string[]>([]);
 
     const handleCityChange = (event: React.ChangeEvent<any>) => {
         setSelectedCity(event.target.value);
@@ -21,16 +26,24 @@ export default function Proyectos() {
 
     useEffect(() => {
         const getUbicacion = async () => {
-            const res = await client.fetch(`*[_type == "proyectos"]{ubicacion}`);
-            const ubicacionSet = new Set();
-            res.forEach((item: any) => {
-                ubicacionSet.add(item.ubicacion);
-            });
-            const departamentos = Array.from(ubicacionSet);
-            setUbicacion(departamentos);
+            try {
+                const res: Proyecto[] = await client.fetch(`*[_type == "proyectos"]{ubicacion}`);
+
+                const ubicacionSet = new Set<string>();
+                res.forEach((item) => {
+                    ubicacionSet.add(item.ubicacion);
+                });
+
+                const departamentos = Array.from(ubicacionSet);
+                setUbicacion(departamentos);
+            } catch (error) {
+                console.error('Error al obtener ubicaciones:', error);
+            }
         };
+
         getUbicacion();
     }, []);
+
 
     useEffect(() => {
         const getApartaments = async () => {
