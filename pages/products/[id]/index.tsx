@@ -162,10 +162,10 @@ export default function Pages({ id }: { id: string }) {
     )
 }
 
-export async function getServerSideProps(context) {
-    const { id } = context.params;
+import { GetServerSidePropsContext } from 'next';
 
-
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+    const { id } = context.params || {};
 
     // Retorna los datos como props
     return {
