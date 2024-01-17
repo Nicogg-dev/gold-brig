@@ -23,25 +23,14 @@ export default function Pages({ id }: { id: string }) {
 
     useEffect(() => {
         const getApartaments = async () => {
-            try {
-                const [res] = await client.fetch(`*[_type == $tipo && _id == $apartamentoId]`, {
-                    tipo: tipo,
-                    apartamentoId: id
-                });
-
-                if (res && res.Imagenes && res.Imagenes.length > 0) {
-                    const imageurl = res.Imagenes[0].asset._ref;
-                    setUrl(urlFor(imageurl).url());
-                }
-
-                setApartament(res);
-            } catch (error) {
-                console.error('Error al obtener apartamentos:', error);
-            }
-        };
-
+            const [res] = await client.fetch(`*[_type == $tipo && _id == $apartamentoId]`, { tipo: tipo, apartamentoId: id });
+            setApartament(res);
+            const imageurl = res.Imagenes[0].asset._ref;
+            setUrl(urlFor(imageurl).url());
+        }
         getApartaments();
-    }, [tipo, id]);
+
+    }, []);
 
 
     const formatoPesos = new Intl.NumberFormat('es-CO', {
@@ -62,7 +51,7 @@ export default function Pages({ id }: { id: string }) {
                             <p className="text-xl md:text-2xl mb-0 mt-4" style={{ color: '#8A8172' }}>INMUEBLES</p>
                             <h2 className="text-3xl md:text-4xl mb-5">DESTACADOS</h2>
                         </Box>
-
+                        
                         {url && <img src={url}
                             alt="Tu imagen"
                             className='position-relative' />}
