@@ -58,36 +58,36 @@ export default function Home() {
     <LayoutHomePage title='Gold Brick'>
       <Box className="site-home">
         <Image
-          src="/images/banner.png"
+          src="/images/bannerfinal.png"
           alt="Banner"
           fill
           className='site-home__image'
         />
         <Box className="site-home__content ">
-          <h1 className='text-3xl md:text-4xl text-bold text-black'>COMPRA, RENTA Y VENDE</h1>
-          <p className='text-lg md:text-xl md:text-gray-600 text-black '>DE LA MANERA MAS CONFIABLE</p>
+          <h1 className='text-3xl text-white md:text-5xl text-bold'>COMPRA, RENTA Y VENDE</h1>
+          <p className='text-lg text-white md:text-xl md:text-gray-600 '>EN MANOS DE EXPERTOS</p>
         </Box>
       </Box>
       <Box className="site-home-search">
         <Box className="site-home-search__contain">
 
-          <form className="site-home-search__form grid grid-cols-12 gap-4 items-center"
+          <form className="grid items-center grid-cols-12 gap-4 site-home-search__form"
             onSubmit={handleFormSubmit}>
-            <Box className="col-span-12 md:col-span-2 flex sm:flex-row md:flex-col justify-center gap-2 sm:mb-4 md:mb-0">
-              <Button variant="contained" className='bg-blue-700 font-bold h-20'>
-                <a href="/search?tipo=ventaap" className='no-underline text-white w-full'>
+            <Box className="flex justify-center col-span-12 gap-2 md:col-span-2 sm:flex-row md:flex-col sm:mb-4 md:mb-0">
+              <Button variant="contained" className='h-20 font-bold bg-blue-700'>
+                <a href="/search?tipo=ventaap" className='w-full text-white no-underline'>
                   Comprar
                 </a>
               </Button>
-              <Button variant="contained" className='bg-white text-blue-800 font-bold h-20'>
-                <a href="/search?tipo=arriendoap" className='no-underline text-blue-950 w-full'>
+              <Button variant="contained" className='h-20 font-bold text-blue-800 bg-white'>
+                <a href="/search?tipo=arriendoap" className='w-full no-underline text-blue-950'>
                   Rentar
                 </a>
               </Button>
             </Box>
 
-            <Box className="col-span-12 md:col-span-4 flex flex-col">
-              <InputLabel id="ubicacion" className='font-bold text-black mb-2 text-lg md:text-xl'>UBICACION</InputLabel>
+            <Box className="flex flex-col col-span-12 md:col-span-4">
+              <InputLabel id="ubicacion" className='mb-2 text-lg font-bold text-black md:text-xl'>UBICACION</InputLabel>
               <Select
                 className='h-10'
                 labelId="demo-simple-select-autowidth-label"
@@ -107,8 +107,8 @@ export default function Home() {
                 }
               </Select>
             </Box>
-            <Box className="col-span-12 md:col-span-4 flex flex-col">
-              <InputLabel id="tipoInmueble" className='font-bold text-black mb-2 text-lg md:text-xl'>TIPO DE INMUEBLE</InputLabel>
+            <Box className="flex flex-col col-span-12 md:col-span-4">
+              <InputLabel id="tipoInmueble" className='mb-2 text-lg font-bold text-black md:text-xl'>TIPO DE INMUEBLE</InputLabel>
               <Select
                 className='h-10 text-gray-600'
                 labelId="demo-simple-select-autowidth-label"
@@ -128,34 +128,34 @@ export default function Home() {
                 <MenuItem value={"bodega"}>Bodegas</MenuItem>
               </Select>
             </Box>
-            <Box className="flex col-span-12 md:col-span-2 bg-gray-700 justify-center items-center rounded-lg h-12 w-40 md:w-16 md:h-16 hover:bg-white"
+            <Box className="flex items-center justify-center w-40 h-12 col-span-12 bg-gray-700 rounded-lg md:col-span-2 md:w-16 md:h-16 hover:bg-white"
               style={{ backgroundColor: '#8a8073' }}>
               <Button className='text-2xl text-white' type='submit'>
                 <AiOutlineSearch className='text-3xl' />
               </Button>
             </Box>
           </form>
-          <p className='sm:text-xl md:text-2xl text-gray-700 font-light text-center mt-5'>Sujerencia de texto : Encuentra tu hogar ideal usando nuestro navegador inteligente</p>
+          <p className='mt-5 font-light text-center text-gray-700 sm:text-xl md:text-2xl'>Sujerencia de texto : Encuentra tu hogar ideal usando nuestro navegador inteligente</p>
         </Box>
       </Box>
-      <Box className="site-home-service mb-5 text-center">
-        <h3 className="text-2xl md:text-4xl font-bold text-black mb-4">INMOBILIARIA GOLD BRICK</h3>
+      <Box className="mb-5 text-center site-home-service">
+        <h3 className="mb-4 text-2xl font-bold text-black md:text-4xl">INMOBILIARIA GOLD BRICKS</h3>
 
         <Box className="flex w-full">
-          <div className="flex static items-center justify-center w-full">
-            <h5 className="text-xl font-semibold mx-4 z-10 bg-white px-2" style={{ fontFamily: 'Amiri Regular', color: '#856106' }}>
+          <div className="static flex items-center justify-center w-full">
+            <h5 className="z-10 px-2 mx-4 text-xl font-semibold bg-white" style={{ fontFamily: 'Amiri Regular', color: '#856106' }}>
               CONTACTANOS
             </h5>
             <div className="absolute h-0.5" style={{ width: '50vw', background: '#856106' }}></div>
           </div>
         </Box>
       </Box>
-      <Box className="grid grid-cols-3 px-20 items-center mb-20">
-        <p className='col-span-3 md:col-span-2 text-Amarai-Light md:text-lg font-semibold'>
+      <Box className="grid items-center grid-cols-3 px-20 mb-20">
+        <p className='col-span-3 font-semibold md:col-span-2 text-Amarai-Light md:text-lg'>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum tellus.
           Curabitur tempor quis eros tempus lacinia.
         </p>
-        <div className='flex col-span-3 md:col-span-1 m-auto'>
+        <div className='flex col-span-3 m-auto md:col-span-1'>
           <Image
             src="/images/logofooter.png"
             alt="Banner"
@@ -166,7 +166,7 @@ export default function Home() {
       </Box>
 
 
-      <Box className="d-flex flex-row" sx={{ paddingBottom: "50px", background: "#DFD6BF" }}>
+      <Box className="flex-row d-flex" sx={{ paddingBottom: "50px", background: "#DFD6BF" }}>
         <Image
           src="/images/imageHome1.png"
           alt="image-home-1"
@@ -187,23 +187,23 @@ export default function Home() {
         />
 
       </Box>
-      <h2 className='text-center mt-5 mb-5'>
+      <h2 className='mt-5 mb-5 text-center'>
         NUESTROS SERVICIOS
       </h2>
       <Box className="grid grid-cols-2">
-        <Box className="col-span-2 lg:col-span-1 p-4">
-          <h5 className='text-Amarai-Light  fw-bold text-color-yellow ornament-text-yellow position-relative'>
-            SERVICIO 1
-          </h5>
-          <p className='text-Amarai-Regular fs-5 mt-5'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan,
-          </p>
-        </Box>
-        <Box className="col-span-2 lg:col-span-1 p-4">
+        <Box className="col-span-2 p-4 lg:col-span-1">
           <h5 className='text-Amarai-Light fw-bold text-color-yellow ornament-text-yellow position-relative'>
             SERVICIO 1
           </h5>
-          <p className='text-Amarai-Regular fs-5  mt-5'>
+          <p className='mt-5 text-Amarai-Regular fs-5'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan,
+          </p>
+        </Box>
+        <Box className="col-span-2 p-4 lg:col-span-1">
+          <h5 className='text-Amarai-Light fw-bold text-color-yellow ornament-text-yellow position-relative'>
+            SERVICIO 1
+          </h5>
+          <p className='mt-5 text-Amarai-Regular fs-5'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan,
           </p>
         </Box>
@@ -212,14 +212,14 @@ export default function Home() {
       <Footer />
 
       <Box className="flex w-full h-40 mt-20">
-        <div className="flex static items-center justify-center w-full">
-          <h5 className="text-black text-2xl md:text-4xl font-semibold mx-4 z-10 bg-white px-2">
+        <div className="static flex items-center justify-center w-full">
+          <h5 className="z-10 px-2 mx-4 text-2xl font-semibold text-black bg-white md:text-4xl">
             CONTACTANOS
           </h5>
           <div className="absolute left-0 h-0.5 bg-black mx-12" style={{ width: '50vw' }}></div>
         </div>
       </Box>
-      <footer className='grid grid-cols-2 h-60 mb-10'>
+      <footer className='grid grid-cols-2 mb-10 h-60'>
         <div className='flex flex-col items-center justify-center col-span-2 mb-5 lg:col-span-1 lg:mb-0'>
           <div className='col-span-2 lg:col-span-1 '>
             <Image
@@ -233,7 +233,7 @@ export default function Home() {
         </div>
         <div className='flex flex-col items-center justify-center col-span-2 lg:col-span-1 lg:items-start'>
           <span className='flex items-center'>
-            <IoIosMail className='text-4xl text-blue-950 mr-2' />
+            <IoIosMail className='mr-2 text-4xl text-blue-950' />
             <a
               href="mailto:GOLDBRICKSINVERSIONES@OUTLOOK.COM?subject=Asunto del correo&body=Cuerpo del mensaje"
               className='text-color-yellow'
@@ -242,7 +242,7 @@ export default function Home() {
             </a>
           </span>
           <span className='flex mt-4'>
-            <FaPhoneAlt className='text-3xl text-blue-950 mr-2' />
+            <FaPhoneAlt className='mr-2 text-3xl text-blue-950' />
             <p className='text-color-yellow'>+57 (317)383 2489</p>
           </span>
           <span className='flex items-center gap-4 my-4'>
