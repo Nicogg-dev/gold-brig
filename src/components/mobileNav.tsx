@@ -18,8 +18,8 @@ const NavMobile: NextPage = () => {
 
     const menuRef = useRef(null);
 
-    const closeMenuIfClickedOutside = (event) => {
-        if (menuRef.current && !menuRef.current.contains(event.target)) {
+    const closeMenuIfClickedOutside = (event: { target: any; }) => {
+        if (menuRef.current && (menuRef.current as HTMLElement).contains(event.target)) {
             setShowMenu(false);
         }
     };
