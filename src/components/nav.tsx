@@ -3,6 +3,7 @@ import { FaArrowUp } from 'react-icons/fa';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { NextPage } from 'next';
 
 const Nav: NextPage = () => {
   const venta = 'ventaap';
@@ -15,10 +16,10 @@ const Nav: NextPage = () => {
     setShowMenu(!showMenu);
   };
 
-  const menuRef = useRef(null);
+  const menuRef = useRef<HTMLDivElement | null>(null);
 
-  const closeMenuIfClickedOutside = (event) => {
-    if (menuRef.current && !menuRef.current.contains(event.target)) {
+  const closeMenuIfClickedOutside = (event: { target: any; }) => {
+    if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
       setShowMenu(false);
     }
   };
