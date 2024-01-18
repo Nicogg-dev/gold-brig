@@ -22,7 +22,7 @@ interface Apartamento {
     Caracteristicas: string[];
     informacion?: string; // Agrega la propiedad informacion si realmente la necesitas
     url?: string;
-  }
+}
 
 const apartamento: Apartamento = {
     Nombre: "Apartamento",
@@ -40,7 +40,7 @@ const apartamento: Apartamento = {
     Caracteristicas: ["Caracteristicas"],
     informacion: "Informacion adicional", // Ejemplo de propiedad informacion
     url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13743.33083466056!2d-75.91841313056536!3d4.753817257859325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e38701f36b03203%3A0x31209e5324dec0f0!2sParque%20Lineal!5e0!3m2!1ses-419!2sco!4v1705532277645!5m2!1ses-419!2sco",
-  };
+};
 
 export default function Pages({ id }: { id: string }) {
 
@@ -87,7 +87,7 @@ export default function Pages({ id }: { id: string }) {
                             <p className="text-xl md:text-2xl mb-0 mt-4" style={{ color: '#8A8172' }}>INMUEBLES</p>
                             <h2 className="text-3xl md:text-4xl mb-5">DESTACADOS</h2>
                         </Box>
-                        
+
                         {url && <img src={url}
                             alt="Tu imagen"
                             className='position-relative' />}
@@ -109,39 +109,39 @@ export default function Pages({ id }: { id: string }) {
                             <iframe src={apartament.url} width="100%" height="220" style={{ border: 0 }} loading="lazy" ></iframe>
                         </Box>
                         <Box className="grid grid-cols-12 mb-5 border-gray-100 rounded-lg gap-y-8">
-                            <Box className="col-span-6 md:col-span-5 flex justify-center border-r-2 border-gray-600 gap-2 p-2">
+                            <Box className="col-span-12 md:col-span-5 flex justify-center md:border-r-2 md:border-gray-600 gap-2 p-2">
                                 <h4 className='text-sm lg:text-sm font-normalS text-gray-500'>AREA</h4>
                                 <p className='text-md h-full font-medium'>{apartament.area} m2</p>
                             </Box>
-                            <Box className="col-span-6 md:col-span-3 flex justify-center md:border-r-2 md:border-gray-600 gap-1 p-2">
+                            <Box className="col-span-12 md:col-span-3 flex justify-center md:border-r-2 md:border-gray-600 gap-1 md:p-2">
                                 <h4 className='text-sm lg:text-sm font-normal text-gray-500'>CUARTOS</h4>
                                 <p className='text-md font-medium'>{apartament.cuartos}</p>
                             </Box>
-                            <Box className="col-span-6 md:col-span-4 flex justify-center border-r-2 border-gray-600 md:border-0 gap-2 p-2">
+                            <Box className="col-span-12 md:col-span-4 flex justify-center gap-2 md:p-2">
                                 <h4 className='text-sm lg:text-sm font-normal text-gray-500'>BAÑOS</h4>
                                 <p className='text-md font-medium'>{apartament.banos}</p>
                             </Box>
-                            <Box className="col-span-6 md:col-span-5 flex justify-center md:border-r-2 border-gray-600 gap-2 p-2">
+                            <Box className="col-span-12 md:col-span-5 flex justify-center md:border-r-2 border-gray-600 gap-2 md:p-2">
                                 <h4 className='text-sm lg:text-sm font-normal text-gray-500'>PARQUEADEROS</h4>
                                 <p className='text-md font-medium'>{apartament.parqueadero}</p>
                             </Box>
-                            <Box className="col-span-6 md:col-span-3 flex justify-center border-r-2 border-gray-600 gap-1 p-2">
+                            <Box className="col-span-12 md:col-span-3 flex justify-center md:border-r-2 md:border-gray-600 gap-1 md:p-2">
                                 <h4 className='text-sm lg:text-sm font-normal text-gray-500'>PISO</h4>
                                 <p className='text-md font-medium'>{apartament.piso}</p>
                             </Box>
-                            <Box className="col-span-6 md:col-span-4 flex justify-center border-gray-600 gap-1 p-2">
+                            <Box className="col-span-12 md:col-span-4 flex justify-center md:border-gray-600 gap-1 md:p-2">
                                 <h4 className='text-sm lg:text-sm font-normal text-gray-500'>TERRAZA</h4>
                                 <p className='text-md font-medium'>{apartament.terraza}</p>
                             </Box>
                         </Box>
-                        <Box className="flex justify-between border-t-2 py-4 border-b-2 mb-10">
-                            <Box className="flex flex-col me-3">
+                        <Box className="grid grid-cols-12 justify-between border-t-2 py-4 border-b-2 mb-10">
+                            <Box className="flex flex-col me-3 col-span-6 md:col-span-4">
                                 <p className='text-base text-gray-500 text-center'>ADMINISTRACION</p><span className='text-normal__big text-center fs-5 fw-medium mb-2'>{administracion}</span>
                             </Box>
-                            <Box className="d-flex flex-column me-3">
+                            <Box className="flex flex-col me-3 col-span-6 md:col-span-4">
                                 <p className='text-base text-gray-500 text-center'>ESTRATO</p><span className='text-normal__big text-center fs-5 fw-medium mb-2'>{apartament.estrato}</span>
                             </Box>
-                            <Box className="d-flex flex-column">
+                            <Box className="flex flex-col col-span-12 md:col-span-4">
                                 <p className='text-base text-gray-500 text-center'>AÑO DE LA CASA</p><span className='text-normal__big text-center fs-5 fw-medium mb-2'>{apartament.ano}</span>
                             </Box>
                         </Box>
