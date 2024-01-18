@@ -6,12 +6,22 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 interface ProductCardProps {
+  apartment: ApartmentType;
   tipo: string;
-  apartment: any;
-  key: string;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ tipo, apartment, key }) => {
+interface ApartmentType {
+  ubicacion: string;
+  precio: number;
+  area: number;
+  cuartos: number;
+  banos: number;
+  Imagenes: Array<any>;
+  _id: string;
+}
+
+const ProductCard: NextPage<ProductCardProps> = ({ apartment, tipo }) => {
+
 
   const { ubicacion, precio, area, cuartos, banos, Imagenes, _id } = apartment;
 

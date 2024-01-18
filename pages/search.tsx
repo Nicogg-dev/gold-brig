@@ -13,11 +13,26 @@ import { client } from "@/utils/sanityClient";
 
 type UbicacionType = string;
 
+type ApartmentType = {
+  _id: string;
+  ubicacion: string;
+  precio: number;
+  area: number;
+  cuartos: number;
+  banos: number;
+  Imagenes: {
+    asset: {
+      _ref: string;
+    };
+  }[];
+  // Otras propiedades específicas de cada apartamento
+};
+
 export default function Search() {
 
   const router = useRouter();
 
-  const [apartaments, setApartaments] = useState([{ _id: '', titulo: '', precio: 0, area: 0, ubicacion: '', imagen: '', descripcion: '', tipo: ''}]);
+  const [apartaments, setApartaments] = useState<ApartmentType[]>([]);
 
   const [range, setRange] = useState(3000);
   const [area, setArea] = useState(3000);
