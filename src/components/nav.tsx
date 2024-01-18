@@ -49,7 +49,7 @@ const Nav: NextPage = () => {
           <Link href="/" className="site-nav__link text-xl">HOME</Link>
         </li>
 
-        <li className="site-nav__item relative" ref={menuRef}>
+        <li className="site-nav__item relative">
           <button
             onClick={toggleMenu}
             className={`site-nav__link transition duration-300 flex gap-2 items-center text-xl h-full ${showMenu ? 'border-b-2' : 'border-b-0'}`}
