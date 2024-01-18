@@ -17,7 +17,7 @@ export default function Search() {
 
   const router = useRouter();
 
-  const [apartaments, setApartaments] = useState([]);
+  const [apartaments, setApartaments] = useState([{ _id: '', titulo: '', precio: 0, area: 0, ubicacion: '', imagen: '', descripcion: '', tipo: ''}]);
 
   const [range, setRange] = useState(3000);
   const [area, setArea] = useState(3000);
