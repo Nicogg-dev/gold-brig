@@ -114,7 +114,7 @@ export default function Proyectos() {
                             className="appearance-none w-full h-0.5 bg-blue-950 rounded-md outline-none transition duration-300 ease-in-out hover:bg-gray-900 hover:shadow-md active:bg-black"
                         />
                     </div>
-                    <div className="flex flex-col col-span-4 pt-3 px-16">
+                    <div className="flex flex-col col-span-12 md:col-span-4 pt-3 px-16">
                         <h4 className="text-lg">Area 9m2 - {area}m2 o mas</h4>
                         <input
                             type="range"
