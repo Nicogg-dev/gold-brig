@@ -11,20 +11,27 @@ interface Proyecto {
     // Otras propiedades si las tienes...
 }
 
-interface Apartaments {
+type ApartmentType = {
     _id: string;
-    // Otras propiedades de tu objeto de apartamento
-  }
-
-const apartments: Apartaments[] = [
-    // ... tus objetos de apartamento
-  ];
+    ubicacion: string;
+    precio: number;
+    area: number;
+    cuartos: number;
+    banos: number;
+    Imagenes: {
+      asset: {
+        _ref: string;
+      };
+    }[];
+    // Otras propiedades específicas de cada apartamento
+  };
 
 const tipo: string = 'proyectos';
 
 export default function Proyectos() {
 
-    const [apartaments, setApartaments] = useState(apartments);
+    const [apartaments, setApartaments] = useState<ApartmentType[]>([]);
+
     const [selectedCity, setSelectedCity] = useState('');
     const [range, setRange] = useState(3000);
     const [area, setArea] = useState(3000);
