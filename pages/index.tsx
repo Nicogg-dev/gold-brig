@@ -1,7 +1,7 @@
 import { Inter } from 'next/font/google';
 import LayoutHomePage from '@/src/layouts/home';
 import Image from 'next/image';
-import { Box, Button, InputLabel, MenuItem } from '@mui/material';
+import { Box, InputLabel, MenuItem } from '@mui/material';
 import Select from '@mui/material/Select';
 import { AiOutlineSearch } from "react-icons/ai";
 import Footer from '@/src/components/footer';
@@ -75,16 +75,16 @@ export default function Home() {
           <form className="grid items-center grid-cols-12 gap-4 site-home-search__form"
             onSubmit={handleFormSubmit}>
             <Box className="flex justify-center col-span-12 gap-2 md:col-span-2 sm:flex-row md:flex-col sm:mb-4 md:mb-0">
-              <Button variant="contained" className='h-20 font-bold bg-blue-700'>
+              <button className='h-20 font-bold bg-blue-700'>
                 <Link href="/search?tipo=ventaap" className='w-full text-white no-underline'>
                   Comprar
                 </Link>
-              </Button>
-              <Button variant="contained" className='h-20 font-bold text-blue-800 bg-white'>
+              </button>
+              <button id="contained" className='h-20 font-bold text-blue-800 bg-white'>
                 <Link href="/search?tipo=arriendoap" className='w-full no-underline text-blue-950'>
                   Rentar
                 </Link>
-              </Button>
+              </button>
             </Box>
 
             <Box className="flex flex-col col-span-12 md:col-span-4">
@@ -131,9 +131,9 @@ export default function Home() {
             </Box>
             <Box className="flex items-center justify-center w-40 h-12 col-span-12 bg-gray-700 rounded-lg md:col-span-2 md:w-16 md:h-16 hover:bg-white"
               style={{ backgroundColor: '#8a8073' }}>
-              <Button className='text-2xl text-white' type='submit'>
+              <button className='text-2xl text-white' type='submit'>
                 <AiOutlineSearch className='text-3xl' />
-              </Button>
+              </button>
             </Box>
           </form>
           <p className='mt-5 font-light text-center text-gray-700 sm:text-xl md:text-2xl'>Sujerencia de texto : Encuentra tu hogar ideal usando nuestro navegador inteligente</p>

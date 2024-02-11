@@ -15,8 +15,8 @@ const Footer: NextPage = () => {
                     </h5>
 
                 </Box>
-                <Box className="grid grid-cols-12 gap-10" >
-                    <Box className="col-span-12 md:col-span-5 flex w-full justify-center border-r-2 border-gray-600">
+                <Box className="grid grid-cols-9 gap-10" >
+                    <Box className="col-span-9 md:col-span-4 flex w-full justify-center border-r-2 border-gray-600">
                         <p className='text-white font-light md:font-light text-base lg:text-lg pl-3' style={{ maxWidth: "300px" }}>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                             Ut enim ad minim veniam, quis nostrud exbercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -24,9 +24,9 @@ const Footer: NextPage = () => {
                             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
                         </p>
                     </Box>
-                    <Box className="col-span-12 md:col-span-4 flex flex-col justify-center items-center">
+                    <Box className="col-span-9 md:col-span-3 flex flex-col justify-center items-center">
                         <h5 className='font-semibold text-white text-xl'>NUESTRAS <br></br> ESPECIALIZACIONES</h5>
-                        <div className='flex sm:flex-row md:flex-col px-3'>
+                        <div className='flex flex-col px-3'>
                             <Image src="/images/hombreconlupa.png" alt="Banner" width={90} height={90} className='site-home__image' />
                             <p className='text-light text-lg md:text-xl'>
                                 Think voluminous
@@ -41,8 +41,8 @@ const Footer: NextPage = () => {
                             </p>
                         </div>
                     </Box>
-                    <Box className="col-span-12 md:col-span-3 flex justify-center items-center">
-                        <div className='w-60'>
+                    <Box className="col-span-9 md:col-span-2 flex justify-center items-center">
+                        <div className='w-1/2'>
                             <Image src="/images/casa.png" alt="Banner" fill className='site-home__image' />
                         </div>
                     </Box>
