@@ -8,7 +8,7 @@ const Footer: NextPage = () => {
         <footer className='site-footer'>
             <Box className="">
                 <Box className="flex justify-center gap-10 md:gap-40 px-2">
-                    <h5 className='text-light fs-3 fw-bolder mb-5'>NUESTRA META</h5>
+                    <h5 className='text-light fs-3 fw-bolder mb-5 pl-10 md:pl-0'>NUESTRA META</h5>
                     <h5 className='text-light fs-3 fw-bolder mb-5'>
                         SOBRE
                         <span className="ml-3" style={{ color: '#856106' }}>GOLD BRICK</span>
