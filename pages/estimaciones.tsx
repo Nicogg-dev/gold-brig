@@ -7,7 +7,7 @@ export default function Estimaciones() {
         <LayoutHomePage title='Gold Brick'>
 
             <div className="grid grid-cols-2">
-                <header className="flex flex-col col-span-2 mt-5 mr-20 items-end">
+                <header className="flex flex-col col-span-2 mt-5 mr-20 items-end ml-10">
                     <h2>ESTIMACIONES DE VALOR</h2>
                     <p>MEDIANTE UN ESTUDIO DENOMINADO <span>BOV (BROKER OPINION VALUE)</span>
                         ESTIMAMOS EL PRECIO DE LOS INMUEBLES DE NUESTROS CLIENTES</p>

@@ -112,14 +112,14 @@ export default function Search() {
   };
 
   const CustomPrevArrow: React.FC<ArrowProps & React.HTMLAttributes<HTMLDivElement>> = ({ currentSlide, slideCount, ...props }) => (
-    <div {...props} className="absolute top-1/2 -left-5 transform -translate-y-1/2 text-white text-lg cursor-pointer z-20 rounded-full p-1" style={{ background: '#caad9e' }}>
+    <div {...props} className="absolute top-1/2 -left-5 transform -translate-y-1/2 text-white text-lg cursor-pointer z-20 rounded-full p-1 mx-10" style={{ background: '#caad9e' }}>
       {/* Personaliza la flecha hacia la izquierda aquí */}
       &#8592;
     </div>
   );
 
   const CustomNextArrow: React.FC<ArrowProps & React.HTMLAttributes<HTMLDivElement>> = ({ currentSlide, slideCount, ...props }) => (
-    <div {...props} className="absolute top-1/2 -right-5 transform -translate-y-1/2 text-white text-lg cursor-pointer z-20 rounded-full p-1" style={{ background: '#caad9e' }}>
+    <div {...props} className="absolute top-1/2 -right-5 transform -translate-y-1/2 text-white text-lg cursor-pointer z-20 rounded-full p-1 mx-10 " style={{ background: '#caad9e' }}>
       {/* Personaliza la flecha hacia la derecha aquí */}
       &#8594;
     </div>
