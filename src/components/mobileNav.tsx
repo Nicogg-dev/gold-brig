@@ -45,10 +45,10 @@ const NavMobile: NextPage = () => {
                     {showMenu && (
                         <div className="absolute z-10 mt-2 bg-blue-950 shadow-md transition duration-300">
                             <li className="block px-4 py-2 text-white hover:bg-blue-950 no-underline text-xl">
-                                <Link href={`/search?tipo=ventaap`} className="site-nav__link text-xl">Estimaciones de valor</Link>
+                                <Link href={`/search?tipo=ventaap`} className="site-nav__link text-xl">Venta</Link>
                             </li>
                             <li className="block px-4 py-2 text-white hover:bg-blue-950 no-underline text-xl">
-                                <Link href={`/search?tipo=arriendoap`} className="site-nav__link text-xl">Estimaciones de valor</Link>
+                                <Link href={`/search?tipo=arriendoap`} className="site-nav__link text-xl">Arriendo</Link>
                             </li>
                             <li className="block px-4 py-2 text-white hover:bg-blue-950 no-underline text-xl">
                                 <Link href='/estimaciones' className="site-nav__link text-xl">Estimaciones de valor</Link>
@@ -63,14 +63,15 @@ const NavMobile: NextPage = () => {
                     )}
                 </li>
                 <li>
-
-                    <Image
-                        src={currentPath == "/" ? "/images/icono.png" : "/images/icono-pagina-removebg-preview.png"}
-                        alt="Banner"
-                        width={70}
-                        height={50}
-                        className={currentPath == "/" ? " " : "mt-2"}
-                    />
+                    <Link href="/">
+                        <Image
+                            src={currentPath == "/" ? "/images/icono.png" : "/images/icono-pagina-removebg-preview.png"}
+                            alt="Banner"
+                            width={70}
+                            height={50}
+                            className={currentPath == "/" ? " " : "mt-2"}
+                        />
+                    </Link>
                 </li>
             </ul>
         </nav>

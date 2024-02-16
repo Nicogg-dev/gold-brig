@@ -250,7 +250,7 @@ export default function Search() {
             <h3 className='text-2xl text-center text-stone-500'>
               {Array.isArray(tipo) ? tipo[0].toUpperCase() : tipo?.slice(0, -2).toUpperCase()}
             </h3>
-            <h2 className='text-center font-bold text-3xl md:text-4xl'>
+            <h2 className='text-center text-3xl md:text-4xl'>
               DESTACADOS
             </h2>
             <p className='text-xl font-light text-center'>

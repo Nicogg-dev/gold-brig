@@ -9,8 +9,8 @@ export default function Estimaciones() {
             <div className="grid grid-cols-2">
                 <header className="flex flex-col col-span-2 mt-5 mr-20 items-end ml-10">
                     <h2>ESTIMACIONES DE VALOR</h2>
-                    <p>MEDIANTE UN ESTUDIO DENOMINADO <span>BOV (BROKER OPINION VALUE)</span>
-                        ESTIMAMOS EL PRECIO DE LOS INMUEBLES DE NUESTROS CLIENTES</p>
+                    <p>Mediante un estudio denominado <span>BOV (Broker Opinion Value) </span>
+                        estimamos el precio de los inmuebles de nuestros clientes</p>
                 </header>
                 <main className="grid grid-cols-12 col-span-2 m-5">
                     <section className="flex flex-col col-span-12 lg:col-span-3 text-center p-4 gap-2">

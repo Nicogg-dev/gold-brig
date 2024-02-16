@@ -92,11 +92,11 @@ export default function Pages({ id }: { id: string }) {
                             alt="Tu imagen"
                             className='position-relative' />}
 
-                        <h3 className='text-2xl font-medium mt-4' style={{ color: '#8A8172' }}>Información</h3>
-                        <p className='text-xl font-normal'>{apartament.informacion}</p>
+                        <h3 className='text-2xl font-medium mt-4' style={{ color: '#8A8172' }}>INFORMACIÓN</h3>
+                        <p className='text-2xl'>{apartament.informacion}</p>
                     </Box>
                 </Grid>
-                <Grid className='col-span-12 lg:col-span-5'>
+                <div className='col-span-12 lg:col-span-5'>
                     <Box className="product-information px-3 my-5 pb-3">
                         <h3 className='text-title__product mt-4 mb-5 text-center'>{apartament.Nombre}</h3>
                         <Box className="mb-5">
@@ -109,32 +109,32 @@ export default function Pages({ id }: { id: string }) {
                             <iframe src={apartament.url} width="100%" height="220" style={{ border: 0 }} loading="lazy" ></iframe>
                         </Box>
                         <Box className="grid grid-cols-12 mb-5 border-gray-100 rounded-lg gap-y-8">
-                            <Box className="col-span-12 md:col-span-5 flex justify-center md:border-r-2 md:border-gray-600 gap-2 p-2">
+                            <Box className="col-span-12 md:col-span-5 flex flex-col md:flex-row items-center md:items-start justify-center md:border-r-2 md:border-gray-600 gap-2 p-2">
                                 <h4 className='text-sm lg:text-sm font-normalS text-gray-500'>AREA</h4>
                                 <p className='text-md h-full font-medium'>{apartament.area} m2</p>
                             </Box>
-                            <Box className="col-span-12 md:col-span-3 flex justify-center md:border-r-2 md:border-gray-600 gap-1 md:p-2">
+                            <Box className="col-span-12 md:col-span-3 flex flex-col md:flex-row items-center md:items-start justify-center md:border-r-2 md:border-gray-600 gap-1 md:p-2">
                                 <h4 className='text-sm lg:text-sm font-normal text-gray-500'>CUARTOS</h4>
                                 <p className='text-md font-medium'>{apartament.cuartos}</p>
                             </Box>
-                            <Box className="col-span-12 md:col-span-4 flex justify-center gap-2 md:p-2">
+                            <Box className="col-span-12 md:col-span-4 flex flex-col md:flex-row items-center md:items-start justify-center gap-2 md:p-2">
                                 <h4 className='text-sm lg:text-sm font-normal text-gray-500'>BAÑOS</h4>
                                 <p className='text-md font-medium'>{apartament.banos}</p>
                             </Box>
-                            <Box className="col-span-12 md:col-span-5 flex justify-center md:border-r-2 border-gray-600 gap-2 md:p-2">
+                            <Box className="col-span-12 md:col-span-5 flex flex-col md:flex-row items-center md:items-start justify-center md:border-r-2 border-gray-600 gap-2 md:p-2">
                                 <h4 className='text-sm lg:text-sm font-normal text-gray-500'>PARQUEADEROS</h4>
                                 <p className='text-md font-medium'>{apartament.parqueadero}</p>
                             </Box>
-                            <Box className="col-span-12 md:col-span-3 flex justify-center md:border-r-2 md:border-gray-600 gap-1 md:p-2">
+                            <Box className="col-span-12 md:col-span-3 flex flex-col md:flex-row items-center md:items-start justify-center md:border-r-2 md:border-gray-600 gap-1 md:p-2">
                                 <h4 className='text-sm lg:text-sm font-normal text-gray-500'>PISO</h4>
                                 <p className='text-md font-medium'>{apartament.piso}</p>
                             </Box>
-                            <Box className="col-span-12 md:col-span-4 flex justify-center md:border-gray-600 gap-1 md:p-2">
+                            <Box className="col-span-12 md:col-span-4 flex flex-col md:flex-row items-center md:items-start justify-center md:border-gray-600 gap-1 md:p-2">
                                 <h4 className='text-sm lg:text-sm font-normal text-gray-500'>TERRAZA</h4>
                                 <p className='text-md font-medium'>{apartament.terraza}</p>
                             </Box>
                         </Box>
-                        <Box className="grid grid-cols-12 justify-between border-t-2 py-4 border-b-2 mb-10">
+                        <div className="grid grid-cols-12 justify-between border-t-2 py-4 border-b-2 mb-10">
                             <Box className="flex flex-col me-3 col-span-6 md:col-span-4">
                                 <p className='text-base text-gray-500 text-center'>ADMINISTRACION</p><span className='text-normal__big text-center fs-5 fw-medium mb-2'>{administracion}</span>
                             </Box>
@@ -144,7 +144,7 @@ export default function Pages({ id }: { id: string }) {
                             <Box className="flex flex-col col-span-12 md:col-span-4">
                                 <p className='text-base text-gray-500 text-center'>AÑO DE LA CASA</p><span className='text-normal__big text-center fs-5 fw-medium mb-2'>{apartament.ano}</span>
                             </Box>
-                        </Box>
+                        </div>
                         <h4 className='text-base text-gray-500 text-center'>CARACTERISTICAS</h4>
                         <ul className='list-disc pl-4 ml-4'>
                             {apartament.Caracteristicas?.map((caracteristica, index) => (
@@ -152,7 +152,7 @@ export default function Pages({ id }: { id: string }) {
                             ))}
                         </ul>
                     </Box>
-                </Grid>
+                </div>
             </Grid>
 
             <footer>

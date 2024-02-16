@@ -64,7 +64,7 @@ export default function Home() {
           fill
           className='site-home__image'
         />
-        <Box className="site-home__content pb-2 pl-3">
+        <Box className="site-home__content pb-1 pl-3">
           <h1 className='text-3xl text-white md:text-5xl text-bold'>COMPRA, RENTA Y VENDE</h1>
           <p className='text-lg text-white md:text-xl md:text-gray-600 '>EN MANOS DE EXPERTOS</p>
         </Box>
@@ -88,7 +88,7 @@ export default function Home() {
             </Box>
 
             <Box className="flex flex-col col-span-12 md:col-span-4">
-              <InputLabel id="ubicacion" className='mb-2 text-lg font-bold text-black md:text-xl'>UBICACION</InputLabel>
+              <InputLabel id="ubicacion" className='mb-2 text-lg font-bold text-black md:text-xl'>UBICACIÓN</InputLabel>
               <Select
                 className='h-10'
                 labelId="demo-simple-select-autowidth-label"
@@ -145,7 +145,7 @@ export default function Home() {
         <Box className="flex w-full">
           <div className="static flex items-center justify-center w-full">
             <h5 className="z-10 px-2 mx-4 text-xl font-semibold bg-white" style={{ fontFamily: 'Amiri Regular', color: '#856106' }}>
-              CONTACTANOS
+              CONTÁCTANOS
             </h5>
             <div className="absolute h-0.5" style={{ width: '50vw', background: '#856106' }}></div>
           </div>
@@ -215,7 +215,7 @@ export default function Home() {
       <Box className="flex w-full h-40 mt-20">
         <div className="static flex items-center justify-center w-full">
           <h5 className="z-10 px-2 mx-4 text-2xl font-semibold text-black bg-white md:text-4xl">
-            CONTACTANOS
+            CONTÁCTANOS
           </h5>
           <div className="absolute left-0 h-0.5 bg-black mx-12" style={{ width: '50vw' }}></div>
         </div>
