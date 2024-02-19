@@ -33,12 +33,12 @@ const NavMobile: NextPage = () => {
     }, []);
 
     return (
-        <nav className="site-nav w-full">
-            <ul className="site-nav__list">
+        <nav className="site-nav w-full h-20">
+            <ul className="flex justify-between items-center">
                 <li className="site-nav__item relative">
                     <button
                         onClick={toggleMenu}
-                        className={`site-nav__link transition duration-300 flex gap-2 items-center text-xl h-full`}
+                        className={`site-nav__link transition duration-300 flex gap-2 text-xl h-full`}
                     >
                         <FiAlignJustify className={`text-4xl transition duration-300 ${showMenu ? 'rotate-180' : ''}`} />
                     </button>

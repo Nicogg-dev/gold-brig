@@ -129,7 +129,7 @@ export default function Home() {
                 <MenuItem value={"bodega"}>Bodegas</MenuItem>
               </Select>
             </Box>
-            <Box className="flex items-center justify-center w-40 h-12 col-span-12 bg-gray-700 rounded-lg md:col-span-2 md:w-16 md:h-16 hover:bg-white"
+            <Box className="flex items-center justify-center w-full h-12 col-span-12 bg-gray-700 rounded-lg md:col-span-2 md:w-16 md:h-16 hover:bg-white"
               style={{ backgroundColor: '#8a8073' }}>
               <button className='text-2xl text-white' type='submit'>
                 <AiOutlineSearch className='text-3xl' />
