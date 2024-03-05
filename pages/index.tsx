@@ -24,14 +24,14 @@ export default function Home() {
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     // Construct the URL based on the selected values
-    if(ubicacionValue == "" || inmuebleValue == ""){
+    if (ubicacionValue == "" || inmuebleValue == "") {
       alert("Por favor llene todos los campos");
       return
     }
-    if(inmuebleValue == "lotes"){
+    if (inmuebleValue == "lotes") {
       const url1 = `/search?tipo=ventaap&ubicacion=${ubicacionValue}&inmueble=${inmuebleValue}`;
       window.location.href = url1;
-    }else{
+    } else {
       const url2 = `/search?tipo=arriendoap&ubicacion=${ubicacionValue}&inmueble=${inmuebleValue}`;
       window.location.href = url2;
     }
@@ -64,7 +64,7 @@ export default function Home() {
           fill
           className='site-home__image'
         />
-        <Box className="site-home__content pb-1 pl-3">
+        <Box className="pb-1 pl-3 site-home__content">
           <h1 className='text-3xl text-white md:text-5xl text-bold'>COMPRA, RENTA Y VENDE</h1>
           <p className='text-lg text-white md:text-xl md:text-gray-600 '>EN MANOS DE EXPERTOS</p>
         </Box>
@@ -74,14 +74,14 @@ export default function Home() {
 
           <form className="grid items-center grid-cols-12 gap-4 site-home-search__form"
             onSubmit={handleFormSubmit}>
-            <Box className="grid grid-cols-12 md:flex justify-center col-span-12 gap-2 md:col-span-2 sm:flex-row md:flex-col sm:mb-4 md:mb-0">
-              <button className='col-span-6 h-20 font-bold bg-blue-700 rounded-lg px-1'>
-                <Link href="/search?tipo=ventaap" className='w-full text-white no-underline'>
+            <Box className="grid justify-center grid-cols-12 col-span-12 gap-2 md:flex md:col-span-2 sm:flex-row md:flex-col sm:mb-4 md:mb-0">
+              <button className='h-20 col-span-6 px-1 font-medium rounded-md' style={{ backgroundColor: '#5982C0' }}>
+                <Link href="/search?tipo=ventaap" className='w-full text-white no-underline text-md'>
                   Comprar
                 </Link>
               </button>
-              <button id="contained" className='col-span-6 h-20 font-bold rounded-lg px-2 text-blue-800 bg-white'>
-                <Link href="/search?tipo=arriendoap" className='w-full no-underline text-blue-950'>
+              <button id="contained" className='h-20 col-span-6 px-2 font-medium rounded-md' style={{ backgroundColor: '#5982C0' }}>
+                <Link href="/search?tipo=arriendoap" className='w-full text-white no-underline text-md'>
                   Rentar
                 </Link>
               </button>
@@ -129,7 +129,7 @@ export default function Home() {
                 <MenuItem value={"bodega"}>Bodegas</MenuItem>
               </Select>
             </Box>
-            <Box className="flex items-center justify-center w-full h-12 col-span-12 bg-gray-700 rounded-lg md:col-span-2 md:w-16 md:h-16 hover:bg-white"
+            <Box className="flex items-center justify-center w-full h-12 col-span-12 bg-gray-700 rounded-lg md:col-span-2 md:w-16 md:h-16 md:mt-7"
               style={{ backgroundColor: '#8a8073' }}>
               <button className='text-2xl text-white' type='submit'>
                 <AiOutlineSearch className='text-3xl' />

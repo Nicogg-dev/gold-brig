@@ -2,7 +2,6 @@ import React, { useEffect, useState, ReactNode } from "react";
 import { useRouter } from 'next/router';
 
 import Slider from "react-slick";
-import ArrowProps from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -10,7 +9,9 @@ import { Box, InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/mater
 import ProductCard from '@/src/components/productCard';
 import LayoutHomePage from '@/src/layouts/home';
 import { client } from "@/utils/sanityClient";
-import Link from "next/link";
+import Image from "next/image";
+
+import { FaArrowAltCircleRight } from "react-icons/fa";
 
 type UbicacionType = string;
 
@@ -168,7 +169,6 @@ export default function Search() {
     ]
   };
 
-  const defaultValue = '';
 
   return (
     <LayoutHomePage title='Gold Brick'>
@@ -273,9 +273,16 @@ export default function Search() {
             {/* Fondo solo en la parte superior */}
           </div>
           <Slider {...settings} className="m-auto w-96 lg:w-11/12">
-            <div className='w-full col-span-6 p-4 mt-10 h-50 bg-slate-950 md:content-none'>
-              <h1 className="text-white">Desliza</h1>
-              <h1 className="text-white">{'--->'}</h1>
+            <div className='w-full col-span-6 p-4 h-50 text-center items-center'>
+              <Image
+                src="/images/Depavscasa.png"
+                alt="Banner"
+                fill
+                className='site-home__image'
+              />
+              <div className="flex flex-col items-center">
+                <FaArrowAltCircleRight className="text-3xl mt-10"/>
+              </div>
             </div>
             {apartaments.map((apartment) => (
               <ProductCard tipo={Array.isArray(tipo) ? tipo.join("") : tipo || ""} apartment={apartment} key={apartment._id} />

@@ -9,15 +9,15 @@
     &__content{
         position: absolute;
         z-index: 2;
-        bottom: 42%;
+        bottom: 40%;
         right: 100px;
         &::after{
             content: " ";
             background-color: #FFC738;
             position: absolute;
             right: -20px;
-            width: 10px;
-            height: 100%;
+            width: 8px;
+            height: 70%;
             top: 0;
 
         }
