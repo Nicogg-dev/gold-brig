@@ -10,6 +10,7 @@ import { Box, InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/mater
 import ProductCard from '@/src/components/productCard';
 import LayoutHomePage from '@/src/layouts/home';
 import { client } from "@/utils/sanityClient";
+import Link from "next/link";
 
 type UbicacionType = string;
 
@@ -112,14 +113,14 @@ export default function Search() {
   };
 
   const CustomPrevArrow: React.FC<ArrowProps & React.HTMLAttributes<HTMLDivElement>> = ({ currentSlide, slideCount, ...props }) => (
-    <div {...props} className="absolute top-1/2 -left-5 transform -translate-y-1/2 text-white text-lg cursor-pointer z-20 rounded-full p-1 mx-10" style={{ background: '#caad9e' }}>
+    <div {...props} className="absolute z-20 p-1 mx-10 text-lg text-white transform -translate-y-1/2 rounded-full cursor-pointer top-1/2 -left-5" style={{ background: '#caad9e' }}>
       {/* Personaliza la flecha hacia la izquierda aquí */}
       &#8592;
     </div>
   );
 
   const CustomNextArrow: React.FC<ArrowProps & React.HTMLAttributes<HTMLDivElement>> = ({ currentSlide, slideCount, ...props }) => (
-    <div {...props} className="absolute top-1/2 -right-5 transform -translate-y-1/2 text-white text-lg cursor-pointer z-20 rounded-full p-1 mx-10 " style={{ background: '#caad9e' }}>
+    <div {...props} className="absolute z-20 p-1 mx-10 text-lg text-white transform -translate-y-1/2 rounded-full cursor-pointer top-1/2 -right-5 " style={{ background: '#caad9e' }}>
       {/* Personaliza la flecha hacia la derecha aquí */}
       &#8594;
     </div>
@@ -173,9 +174,9 @@ export default function Search() {
     <LayoutHomePage title='Gold Brick'>
 
 
-      <Box className="grid grid-cols-3 grid-rows-3 py-2 px-2 gap-5">
+      <Box className="grid grid-cols-3 grid-rows-3 gap-5 px-2 py-2">
 
-        <Box className="col-span-3 lg:col-span-1 row-span-3 m-auto grid grid-cols-12 w-full px-4 pt-10">
+        <Box className="grid w-full grid-cols-12 col-span-3 row-span-3 px-4 pt-10 m-auto lg:col-span-1">
           <div className="col-span-12">
             <div className="flex flex-col py-2 text-center">
               <h4 className="text-base">Precio $43 - ${range} millones o mas</h4>
@@ -188,7 +189,7 @@ export default function Search() {
                 className="appearance-none w-full h-0.5 bg-blue-950 rounded-md outline-none transition duration-300 ease-in-out hover:bg-gray-900 hover:shadow-md active:bg-black"
               />
             </div>
-            <div className="flex flex-col text-center mt-3">
+            <div className="flex flex-col mt-3 text-center">
               <h4 className="text-base">Area 9m2 - {area}m2 o mas</h4>
               <input
                 type="range"
@@ -200,7 +201,7 @@ export default function Search() {
               />
             </div>
             <div className="pt-4 text-center">
-              <InputLabel id="ubicacion" className='font-light text-black mb-1 text-base'>Buscar por zona o ciudad</InputLabel>
+              <InputLabel id="ubicacion" className='mb-1 text-base font-light text-black'>Buscar por zona o ciudad</InputLabel>
               <Select
                 className="h-8"
                 labelId="demo-simple-select-autowidth-label"
@@ -222,7 +223,7 @@ export default function Search() {
               </Select>
             </div>
             <div className="pt-2 text-center">
-              <InputLabel id="tipoInmueble" className='font-light text-black mb-1 text-base'>Tipo de inmueble</InputLabel>
+              <InputLabel id="tipoInmueble" className='mb-1 text-base font-light text-black'>Tipo de inmueble</InputLabel>
               <Select
                 className='h-8'
                 labelId="demo-simple-select-autowidth-label"
@@ -244,13 +245,13 @@ export default function Search() {
             </div>
           </div>
           <div className="col-span-12">
-            <h3 className='text-2xl text-center text-stone-500 mt-5 md:mt-0'>
+            <h3 className='mt-5 text-2xl text-center text-stone-500 md:mt-0'>
               APARTAMENTOS EN
             </h3>
             <h3 className='text-2xl text-center text-stone-500'>
               {Array.isArray(tipo) ? tipo[0].toUpperCase() : tipo?.slice(0, -2).toUpperCase()}
             </h3>
-            <h2 className='text-center text-3xl md:text-4xl'>
+            <h2 className='text-3xl text-center md:text-4xl'>
               DESTACADOS
             </h2>
             <p className='text-xl font-light text-center'>
@@ -267,11 +268,15 @@ export default function Search() {
           </div>
         </Box>
 
-        <Box className="col-span-3 lg:col-span-2 flex relative justify-center mt-10 row-span-3">
-          <div className="absolute w-3/4 lg:w-full h-28 top-0 " style={{ background: '#baad9e' }}>
+        <Box className="relative flex justify-center col-span-3 row-span-3 mt-10 lg:col-span-2">
+          <div className="absolute top-0 w-3/4 lg:w-full h-28 " style={{ background: '#baad9e' }}>
             {/* Fondo solo en la parte superior */}
           </div>
-          <Slider {...settings} className="w-96 lg:w-11/12 m-auto">
+          <Slider {...settings} className="m-auto w-96 lg:w-11/12">
+            <div className='w-full col-span-6 p-4 mt-10 h-50 bg-slate-950 md:content-none'>
+              <h1 className="text-white">Desliza</h1>
+              <h1 className="text-white">{'--->'}</h1>
+            </div>
             {apartaments.map((apartment) => (
               <ProductCard tipo={Array.isArray(tipo) ? tipo.join("") : tipo || ""} apartment={apartment} key={apartment._id} />
             ))}
