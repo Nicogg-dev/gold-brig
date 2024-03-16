@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Inter } from 'next/font/google';
 import LayoutHomePage from '@/src/layouts/home';
 import Image from 'next/image';
@@ -9,7 +10,6 @@ import Footer from '@/src/components/footer';
 import { IoIosMail } from "react-icons/io";
 import { FaPhoneAlt, FaInstagram, FaFacebook } from "react-icons/fa";
 import { client } from '@/utils/sanityClient';
-import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 
@@ -65,7 +65,7 @@ export default function Home() {
           className='site-home__image'
         />
         <Box className="pb-1 pl-3 site-home__content">
-          <h1 className='text-3xl text-white md:text-5xl text-bold'>COMPRA, RENTA Y VENDE</h1>
+          <h1 className='text-3xl text-white md:text-5xl text-bold  font-Almarai'>COMPRA, RENTA Y VENDE</h1>
           <p className='text-lg text-white md:text-xl md:text-gray-600 '>EN MANOS DE EXPERTOS</p>
         </Box>
       </Box>

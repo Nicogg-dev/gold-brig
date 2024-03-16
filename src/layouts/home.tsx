@@ -22,7 +22,7 @@ const LayoutHomePage: NextPage<LayoutHomePageProps> = ({ children, ...props }: L
       </Head>
 
 
-      <main className='w-screen p-0 m-0 font-Almarai'>
+      <main className='w-screen p-0 m-0'>
         {isMobile ? (
           <NavMobile /> // Mostrar componente para pantallas pequeñas
         ) : (
