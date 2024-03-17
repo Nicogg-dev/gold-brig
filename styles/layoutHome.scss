@@ -10,10 +10,10 @@
         position: absolute;
         z-index: 2;
         bottom: 40%;
-        right: 100px;
+        right: 90px;
     
         @media screen and (max-width: 767px) {
-            bottom: 10%;
+            bottom: 20%;
             right: 20px;
     
             &::after {
@@ -21,7 +21,7 @@
                 background-color: #FFC738;
                 position: absolute;
                 right: -20px;
-                width: 8px;
+                width: 4px;
                 height: 70%;
                 top: 0;
             }

@@ -65,8 +65,8 @@ export default function Home() {
           className='site-home__image'
         />
         <Box className="pb-1 pl-3 site-home__content">
-          <h1 className='text-xl text-white md:text-5xl text-bold '>COMPRA, RENTA Y VENDE</h1>
-          <p className='text-sm text-white md:text-xl md:text-gray-600 '>EN MANOS DE EXPERTOS</p>
+          <h1 className='text-sm text-white md:text-5xl text-bold '>COMPRA, RENTA Y VENDE</h1>
+          <p className='text-xs text-white md:text-xl md:text-gray-600 text-end'>EN MANOS DE EXPERTOS</p>
         </Box>
       </Box>
       <Box className="site-home-search">

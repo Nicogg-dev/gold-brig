@@ -281,12 +281,23 @@ export default function Search() {
                 className='site-home__image'
               />
               <div className="flex flex-col items-center">
-                <FaArrowAltCircleRight className="text-3xl mt-10"/>
+                <FaArrowAltCircleRight className="text-3xl mt-10" />
               </div>
             </div>
-            {apartaments.map((apartment) => (
-              <ProductCard tipo={Array.isArray(tipo) ? tipo.join("") : tipo || ""} apartment={apartment} key={apartment._id} />
-            ))}
+
+            {apartaments ? (
+              apartaments.map((apartment) => (
+                <ProductCard
+                  tipo={Array.isArray(tipo) ? tipo.join("") : tipo || ""}
+                  apartment={apartment}
+                  key={apartment._id}
+                />
+              ))
+            ) : (
+              <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-gray-500 bg-opacity-50 z-50">
+                <div className="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-32 w-32"></div>
+              </div>
+            )}
             {/* Tarjetas que ocuparán el espacio restante */}
             {/* <div>
                 <ProductCard />
