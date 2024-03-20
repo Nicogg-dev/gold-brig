@@ -273,17 +273,6 @@ export default function Search() {
             {/* Fondo solo en la parte superior */}
           </div>
           <Slider {...settings} className="m-auto w-96 lg:w-11/12">
-            <div className='w-full col-span-6 p-4 h-50 text-center items-center'>
-              <Image
-                src="/images/Depavscasa.png"
-                alt="Banner"
-                fill
-                className='site-home__image'
-              />
-              <div className="flex flex-col items-center">
-                <FaArrowAltCircleRight className="text-3xl mt-10" />
-              </div>
-            </div>
 
             {apartaments ? (
               apartaments.map((apartment) => (
