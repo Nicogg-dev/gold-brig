@@ -156,15 +156,6 @@ export default function Search() {
           prevArrow: <CustomPrevArrow currentSlide={0} slideCount={0} />,
           nextArrow: <CustomNextArrow currentSlide={0} slideCount={0} />,
         }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          prevArrow: <CustomPrevArrow currentSlide={0} slideCount={0} />,
-          nextArrow: <CustomNextArrow currentSlide={0} slideCount={0} />,
-        }
       }
     ]
   };
